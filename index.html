@@ -2,16 +2,83 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="styleshee" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-cyborg.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Hangman</title>
 </head>
 
 <body>
-	
+	<!-- header -->
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Hangman</h1>
+		</div>
+	</div>
+	<!-- main content -->
+	<section class="container">
+		<!-- row for hangman image -->
+		<div class="row">
+			
+			<div class="col-lg-2">
+			</div>
 
+			<div class="col-lg-8">
+				<!-- whole game goes inside this panel -->
+				<div class="panel panel-default">
+					
+					<div class="container-fluid">
+						<div class="row">
+							<!-- the actual hangman -->
+							<div class="col-lg-6">
+								<section id="hangmanWrapper">
+									img of hangman
+								</section>
+							</div>
 
+							<div class="col-lg-6">
+								
+								<p>Press Any Key to Start</p>
 
+								<section id="winsWrapper">
+									<p>wins: 0</p>
+								</section>
+							</div>
+							<!-- current word section, shows _'s, letters used, guesses remaining -->
+							<div class="col-lg-12">
+								<section id="currentWordWrapper">
+									<p>Current Word</p>
 
+									<section id="lettersWrapper">
+										<ul id="letters">
+											<!-- letters will be added here as li's -->
+										</ul>
+									</section>
+									
+									<section id="lettersUsedWrapper">
+										<p>letters already used:</p>
+									</section>
+
+									<section id="guessesRemainingWrapper">
+										<p>guesses remaining: 10</p>
+									</section>
+								</section>
+							</div>
+
+						</div>
+
+					</div> 
+
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+			</div>
+
+		</div>
+		
+	</section>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>

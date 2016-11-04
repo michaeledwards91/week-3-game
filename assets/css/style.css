@@ -1,0 +1,15 @@
+.panel h2 {
+	text-align: center;
+}
+
+section p {
+	text-align: center;
+}
+
+section li {
+	display: inline;
+}
+
+section ul {
+	text-align: center;
+}
