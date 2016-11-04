@@ -6,16 +6,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-cyborg.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<title>Hangman</title>
+	<title>Fish Hangman</title>
 </head>
 
 <body>
 	<!-- header -->
-	<div class="container">
+	<header>
+		<h1>Hangman</h1>
+		<p>with fish.</p>
+	</header>
+	<!-- <div class="container">
 		<div class="jumbotron">
-			<h1>Hangman</h1>
+			<h1>Fish Hangman</h1>
 		</div>
-	</div>
+	</div> -->
 	<!-- main content -->
 	<section class="container">
 		<!-- row for hangman image -->
@@ -33,17 +37,25 @@
 							<!-- the actual hangman -->
 							<div class="col-lg-6">
 								<section id="hangmanWrapper">
-									img of hangman
+									<img alt="Hangman" src="assets/images/400x400ph.png" id="hangmanImage">
 								</section>
 							</div>
 
 							<div class="col-lg-6">
 								
-								<p>Press Any Key to Start</p>
+								<p id="pressAnyKey">Press Any Key to Start</p>
 
 								<section id="winsWrapper">
 									<p>wins: 0</p>
 								</section>
+
+								<section id="deathsWrapper">
+									<p>deaths: 0</p>
+								</section>
+
+								<section id="guessesRemainingWrapper">
+										<p>guesses remaining: 10</p>
+									</section>
 							</div>
 							<!-- current word section, shows _'s, letters used, guesses remaining -->
 							<div class="col-lg-12">
@@ -60,9 +72,6 @@
 										<p>letters already used:</p>
 									</section>
 
-									<section id="guessesRemainingWrapper">
-										<p>guesses remaining: 10</p>
-									</section>
 								</section>
 							</div>
 

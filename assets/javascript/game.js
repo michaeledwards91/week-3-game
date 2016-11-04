@@ -5,9 +5,10 @@ arrays to hold possible words, letters guessed
 
 //counters
 var wins = 0;
-var words = ["goldfish", "guppy", "carp", "catfish", "suckermouth", "salmon", "koi", "northern pike", "gilt-head bream", "megalodon"];
+var words = ["goldfish", "guppy", "northern pike",  "gilt-head bream", "carp", "catfish", "suckermouth", "salmon", "koi", "megalodon"];
 var wordIndex = 0; 
 var guessesRemaining = 10;
+var deaths = 0;
 //
 var lettersGuessed = [];
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -22,10 +23,7 @@ function resetGame() {
 	correctLetters = [];
 	doneWithWord = true;
 	currentWord = words[wordIndex];
-	//reset all dom elements to starting values
-	document.querySelector("#winsWrapper").innerHTML = "<p>Wins: " + wins + "</p>";
-	document.querySelector("#lettersUsedWrapper").innerHTML = "<p>Letters Already Used: " + lettersGuessed + "</p>";
-	document.querySelector("#guessesRemainingWrapper").innerHTML = "<p>Guesses Remaining: " + guessesRemaining + "</p>";
+	updateStats();
 };
 
 function placeUnknownLetters() {
@@ -59,6 +57,42 @@ function updateStats() {
 	document.querySelector("#lettersUsedWrapper").innerHTML = "<p>Letters already used: " + lettersGuessed + "</p>";
 	document.querySelector("#guessesRemainingWrapper").innerHTML = "<p>Guesses Remaining: " + guessesRemaining + "</p>";
 	document.querySelector("#winsWrapper").innerHTML = "<p>Wins: " + wins + "</p>";
+	document.querySelector("#deathsWrapper").innerHTML = "<p>Deaths: " + deaths + "</p>";
+	switch (guessesRemaining) {
+		case 10:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman10.png");
+			break;
+		case 9:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman9.png");
+			break;
+		case 8:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman8.png");
+			break;
+		case 7:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman7.png");
+			break;
+		case 6:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman6.png");
+			break;
+		case 5:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman5.png");
+			break;
+		case 4:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman4.png");
+			break;
+		case 3:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman3.png");
+			break;
+		case 2:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman2.png");
+			break;
+		case 1:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman1.png");
+			break;
+		case 0:
+			document.querySelector("#hangmanImage").setAttribute("src", "assets/images/hangman0.png");
+			break;
+	}
 }
 
 
@@ -72,6 +106,7 @@ reveal a letter on hit, or add the incorrect letter to letters guessed section. 
 document.onkeyup = function(event) {
 	var userInput = String.fromCharCode(event.keyCode).toLowerCase(); //this var holds the key that user pressed
 	console.log(correctLetters);
+	//check to make sure user pressed a key in the alphabet, if not, game does nothing
 	if (alphabet.indexOf(userInput) >= 0) {
 		if (doneWithWord === true) {
 			placeUnknownLetters();
@@ -96,7 +131,7 @@ document.onkeyup = function(event) {
 			}
 			//if guesses remaining is 0 
 			if (guessesRemaining === 0) {
-				alert("You lost");
+				deaths++;
 				wordIndex++;
 				resetGame();
 			} else if (document.querySelector(".listLetters") === null) {
