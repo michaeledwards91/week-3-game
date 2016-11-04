@@ -1,60 +1,56 @@
 body {
-	background-color: #222222;
+    background-color: #222222;
 }
 header h1 {
-	text-align: center;
+    text-align: center;
 }
 header p {
-	text-align: center;
-	font-size: 18px;
-	color: white;
-	margin-bottom: 35px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 35px;
 }
 .jumbotron {
-	height: 100px;
+    height: 100px;
 }
 .panel {
-	border: none;
+    border: none;
 }
 #pressAnyKey {
-	font-size: 14px;
-	margin-top: 20px;
-	margin-bottom: 60px;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 60px;
 }
 #hangmanWrapper {
-	padding: 15px;
-	border-right: double gray;
+    padding: 15px;
+    border-right: double gray;
 }
-
 #hangmanImage {
-	margin-left: 20px;
+    margin-left: 20px;
 }
-
 #currentWordWrapper {
-	border-top: double gray;
+    border-top: double gray;
 }
 #currentWordWrapper p {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .jumbotron h1 {
-	text-align: center;
+    text-align: center;
 }
 .panel h2 {
-	text-align: center;
+    text-align: center;
 }
 p {
-	font-size: 24px;
+    font-size: 24px;
 }
 section p {
-	text-align: center;
+    text-align: center;
 }
-
 section li {
-	display: inline;
-	font-size: 24px;
-	letter-spacing: 5px;
+    display: inline;
+    font-size: 24px;
+    letter-spacing: 5px;
 }
-
 section ul {
-	text-align: center;
+    text-align: center;
 }
